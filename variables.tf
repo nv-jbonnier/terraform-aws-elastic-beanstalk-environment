@@ -179,6 +179,12 @@ variable "rolling_update_type" {
   description = "`Health` or `Immutable`. Set it to `Immutable` to apply the configuration change to a fresh group of instances"
 }
 
+variable "deployment_policy" {
+  type        = string
+  default     = "Rolling"
+  description = "Should be on of `AllAtOnce`, `Rolling`, `RollingWithAdditionalBatch`, `Immutable` or `TrafficSplitting`"
+}
+
 variable "updating_min_in_service" {
   type        = number
   default     = 1
